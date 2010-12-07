@@ -2,7 +2,8 @@
 \documentclass{sydeStyle}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{graphicx}
+% \usepackage{graphicx}
+\usepackage{longtable}
 
 \coursecode{461}
 \prof{Professor Stashuk}
@@ -18,6 +19,8 @@ Interim Report
 \begin{document}
 
 \maketitle
+
+\tableofcontents
 
 \chapter{Introduction}
 % This should introduce the topic in a manner understandable by anyone with a
@@ -152,6 +155,65 @@ of these.
 % current state of the project.  A concise description indicating how well the
 % group is following their projected time-line should be placed in an appendix
 % (along with the timeline).
+
+\begin{longtable} { c l c c c } 
+    \hline
+    Month & Task & Status & Andrew & Peter \\
+    \hline
+    Sep
+        & Identify task & Completed & \checkmark & \checkmark \\
+        & Identify important unknowns & Completed & \checkmark & \checkmark \\
+        & Research wing dynamics & Completed & \checkmark \\
+        & Obtain prior art & Completed & \checkmark & \\
+    \hline
+    Oct
+        & Design Plan & Completed & \checkmark \\
+        & Glider component breakdown & Completed & \checkmark & \\
+        & Glider team PDR & Completed & \checkmark & \checkmark \\
+        & Glider stable flight model & Ongoing & & \checkmark \\
+        & Actuator and sensor selection & Defered & \checkmark & \\
+    \hline
+    Nov
+        & Actuator and sensor parts acquisition & Defered & \checkmark & \\
+        & Glider deployment strategy & Adopted by WRT & & \checkmark \\
+        & Actuator and sensor testing & Defered & \checkmark & \\
+        & Steady flight controller design & Ongoing & \checkmark & \\
+    \hline
+    Dec
+        & Glider mechanical design & Completed, & & \\
+            & completed and presented (external) & Parameters Available & & \\
+        & Website Summary & Completed & & \checkmark \\
+        & Interim Progress Report & Completed & \checkmark & \\
+    \hline
+    Jan
+        & WRT engine tests (external) & Scheduled & & \\
+        & Steady flight controller design (continued) & Ongoing & \checkmark & \\
+        & Adjustment/augmentation of & Adopted by WRT & \checkmark & \\
+            & controller for deployment task  \\
+        & Rocket flight vibration modeling & Abandonned & & \checkmark \\
+    \hline
+    Feb
+        & WRT test flight (external) & Scheduled & & \\
+        & Controller parts acquisition & & \checkmark & \\
+        & Rocket flight shock/forces modeling & Abandonned & & \checkmark \\
+    \hline
+    Mar
+        & Assembly & & \checkmark & \checkmark \\
+        & Glider test flight & & \checkmark & \checkmark \\
+        & 2 week buffer & & & \\
+    \hline
+    Apr
+        & Final Report & & & \checkmark \\
+        & Conference Summary & & & \checkmark \\
+        & Project Video & & \checkmark & \\
+        & Symposium Presentation Materials & & \checkmark & \\
+        & Symposium & & \checkmark & \checkmark \\
+    \hline
+    Jun
+        & Intercollegiate Rocket \\
+            & Engineering Competition & & \checkmark & \checkmark \\
+    \hline
+\end{longtable}
 
 \bibliography{lab3}
 
