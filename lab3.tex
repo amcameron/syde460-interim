@@ -43,17 +43,17 @@ innovation\cite{IREC}. To satisfy this component, the WRT has opted to create a
 several alternative payloads one of which is a glider to be deployed at the apex
 of the rocket's flight.
 
-The concept for the glider is a springloaded parasev-type craft, 
-consisting of a control mass supended bellow a triangular wing composed of
+The concept for the glider is a spring-loaded Paresev-type craft,
+consisting of a control mass suspended bellow a triangular wing composed of
 sailcloth or other flexible material, similar to a conventional
 hang-glider\cite{wiki:parasev}. The glider must fit within the payload area of
-the rocket and will therefore be no longer than 50cm in length.
+the rocket and will therefore be no longer than 50~cm in length.
 
 The mechanical design of a glider suitable for this task was the subject of a
 design project by 4A Mechanical Engineering student, Gandhali Joshi. However,
 the control of this craft has not yet been considered.
 
-Control of the craft is imperative as failure to recove any component of
+Control of the craft is imperative as failure to recover any component of
 the rocket or payload will result in disqualification from the
 competition\cite{IREC}. It is therefor the objective of this design project to
 design a control system for this glider to allow for ease of recoverability.
@@ -70,35 +70,35 @@ where the task of the controller begins.
 
 \section{Maintain Flight}
 
-When the glider has acheived stable flight, it must remain in stable flight
+When the glider has achieved stable flight, it must remain in stable flight
 until it reaches the ground. Meteorological conditions may make this infeasible.
 It is therefor necessary to temper this requirement in moderate winds. For the
 purposes of this project, moderate wind has been defined as having a ground
-speed no greater than 30km/h, at the upper end of "Moderate Breeze" on the
+speed no greater than 30~km/h, at the upper end of "Moderate Breeze" on the
 Beaufort scale\cite{wiki:beaufort}.
 
 \section{Fly to Target}
 
 The main objective of the controller is to seek out and arrive at a
-pre-determined position on the ground, to allow for the easy recovery of the
+predetermined position on the ground, to allow for the easy recovery of the
 craft upon landing. This is only feasible for certain sets of initial conditions
 and meteorological conditions.
 
 The rocket provides some guidance as to the initial conditions, while the
 meteorological conditions have been limited in the objective above.
 
-Specifically, the bounds on the initial conditions are: an altitude of between 2
-and 5 km above ground level, corresponding to a wide range about the maximum
-apex of the rocket flight; lateral displacement from target of no more than 1km,
-corresponding to the worst case estimate of the rockets trajectory; between 0
-and 9.8m/s downward velocity, corresponding to up to 1 second of freefall before
-deployment; between 0.5 and 3m/s ground speed, corresponding to estimates
-of rocket flight apex velocity; any attitude that will give an angle of attack
-of between 0 and 30 degrees, given the initial velocities, corresponding to the
-assumption that the deployment procedure will position the craft in an
-orientation favourable to flight; and zero spin rates, corresponding to the
-assumption that freefall will be dominated by translational, not rotational,
-motions.
+Specifically, the bounds on the initial conditions are: an altitude of between
+2 and 5~km above ground level, corresponding to a wide range about the maximum
+apex of the rocket flight; lateral displacement from target of no more than
+1~km, corresponding to the worst case estimate of the rockets trajectory;
+between 0 and 9.8~m/s downward velocity, corresponding to up to 1 second of
+freefall before deployment; between 0.5 and 3~m/s ground speed, corresponding
+to estimates of rocket flight apex velocity; any attitude that will give an
+angle of attack of between 0 and 30 degrees, given the initial velocities,
+corresponding to the assumption that the deployment procedure will position the
+craft in an orientation favourable to flight; and zero spin rates,
+corresponding to the assumption that freefall will be dominated by
+translational, not rotational, motions.
 
 \section{Land Safely}
 
@@ -121,22 +121,28 @@ acceptable.
 % (eventually) utilized.
 
 A model considering the dynamics and aerodynamics of the craft is being
-developped based on existing work on hang glider flight \cite{Rogallo1960}
+developed based on existing work on hang glider flight \cite{Rogallo1960}
 \cite{Layton1963} \cite{spottiswoode}.
 Initially, this model is based on the craft investigated in \cite{spottiswoode},
-but will be updated as data about the actual craft becomes available.
+but will be updated as data about the actual craft become available.
 
 Concurrent to this, a controller is being designed based on this model.
-% TODO: flesh out controller description
+A linearization of the system dynamics was obtained in \cite{spottiswoode}
+through use of experimental data gathered in a wind tunnel and in free flight,
+which is being used to design the controller using state-space methods.  Pole
+placement was used for a first iteration of the controller design.  More
+sophisticated design techniques will be considered pending results of
+simulation analysis.  A likely candidate for control will be Linear Quadratic
+Regulation, with Kalman filter state estimation.
 
 To validate the controller, a series of simulations will be run using the
-previously developed model.
-These will be run at the extreme bounds of valid initial conditions, regularly
-spaced intervals in the range of valid initial conditions, as well as a
-population of random samples for intial conditions.
-A number of wind conditions
-will be considered in these simulations based on known existing meteorological
-phenomena including, zero wind, purely horizontal wind, updraft, downdraft, a
+previously developed model to check that the controller meets dynamic
+performance specifications and disturbance rejection criteria.  These will be
+run at the extreme bounds of valid initial conditions, regularly spaced
+intervals in the range of valid initial conditions, as well as a population of
+random samples for initial conditions.  A number of wind conditions will be
+considered in these simulations based on known existing meteorological
+phenomena including zero wind, purely horizontal wind, updraft, downdraft, a
 convection cell, and randomly selected linear superpositions and translations
 of these.
 
