@@ -121,10 +121,16 @@ A model considering the dynamics and aerodynamics of the craft is being
 developed based on existing work on hang glider flight \cite{Rogallo1960}
 \cite{Layton1963} \cite{spottiswoode}.
 Initially, this model is based on the craft investigated in \cite{spottiswoode},
-but will be updated as data about the actual craft becomes available.
+but will be updated as data about the actual craft become available.
 
 Concurrent to this, a controller is being designed based on this model.
-% TODO: flesh out controller description
+A linearization of the system dynamics was obtained in \cite{spottiswoode}
+through use of experimental data gathered in a wind tunnel and in free flight,
+which is being used to design the controller using state-space methods.  Pole
+placement was used for a first iteration of the controller design.  More
+sophisticated design techniques will be considered pending results of
+simulation analysis.  A likely candidate for control will be Linear Quadratic
+Regulation, with Kalman filter state estimation.
 
 To validate the controller, a series of simulations will be run using the
 previously developed model.  These will be run at the extreme bounds of valid
