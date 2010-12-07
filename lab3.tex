@@ -55,17 +55,54 @@ the rocket or payload will result in disqualification from the
 competition.\cite{IREC} It is therefor the objective of this design project to
 design a control system for this glider to allow for ease of recoverability.
 
-% NOT IN INTRO
-% This design was the subject of much
-% investigation by NASA.\cite{Rogallo1960}\cite{Layton1963} However, the goal of these
-% investigations was manned flight; as opposed to fully-autonomous flight, which
-% would be the case here.
-
 \chapter{Objectives}
 % As with the Design Plan, objectives must be specific and demonstrated to be
 % realistic.  The objectives should not have significantly changed from the
 % Design Plan; however, you may want to rework them to ensure that they fit in
 % with your current progress.
+
+The deployment strategy, managed by the rocketry team, should leave the glider
+clear of the rocket and deploying with an attitude suitable to flight. This is
+where the task of the controller begins.
+
+\section{Maintain Flight}
+
+When the glider has acheived stable flight, it must remain in stable flight
+until it reaches the ground. Meteorological conditions may make this infeasible.
+It is therefor necessary to temper this requirement in moderate winds. For the
+purposes of this project, moderate wind has been defined as having a ground
+speed no greater than 30km/h, at the upper end of "Moderate Breeze" on the
+Beaufort scale \cite{wiki:beaufort}.
+
+\section{Fly to Target}
+
+The main objective of the controller is to seek out and arrive at a
+pre-determined position on the ground, to allow for the easy recovery of the
+craft upon landing. This is only feasible for certain sets of initial conditions
+and meteorological conditions.
+
+The rocket provides some guidance as to the initial conditions, while the
+meteorological conditions have been limited in the objective above.
+
+Specifically, the bounds on the initial conditions are: an altitude of between 2
+and 5 km above ground level, corresponding to a wide range about the maximum
+apex of the rocket flight; lateral displacement from target of no more than 1km,
+corresponding to the worst case estimate of the rockets trajectory; between 0
+and 9.8m/s downward velocity, corresponding to up to 1 second of freefall before
+deployment; between 0.5 and 3m/s ground speed, corresponding to estimates
+of rocket flight apex velocity; any attitude that will give an angle of attack
+of between 0 and 30 degrees, given the initial velocities, corresponding to the
+assumption that the deployment procedure will position the craft in an
+orientation favourable to flight; and zero spin rates, corresponding to the
+assumption that freefall will be dominated by translational, not rotational,
+motions.
+
+\section{Land Safely}
+
+The craft is intended to be reused, the craft must not be destroyed
+upon landing. Therefor, impact forces, and impact velocities causing these must
+be limited. As the craft is unmanned, moderate impact shocks upon landing are
+acceptable.
 
 \chapter{Methodology}
 % At this point in the design process, your design methodology should be
@@ -77,6 +114,12 @@ design a control system for this glider to allow for ease of recoverability.
 % justify the methods used in the future of the workshop project.  If two or
 % more potential solutions are being evaluated, then a decision matrix should be
 % (eventually) utilized.
+
+% NOT IN INTRO
+% This design was the subject of much
+% investigation by NASA.\cite{Rogallo1960}\cite{Layton1963} However, the goal of these
+% investigations was manned flight; as opposed to fully-autonomous flight, which
+% would be the case here.
 
 \chapter{Timeline}
 % The timeline provided with the Design Plan should be updated to indicate the
